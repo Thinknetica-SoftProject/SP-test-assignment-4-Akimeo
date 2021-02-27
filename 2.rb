@@ -15,4 +15,12 @@
 #
 #
 ## Решение:
-
+require 'digest'
+input = gets.chomp
+res = ""
+ans = 0
+while res[0..4] != "00000"
+  ans += 1
+  res = Digest::MD5.hexdigest(input + ans.to_s)
+end
+puts ans

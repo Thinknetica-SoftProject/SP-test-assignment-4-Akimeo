@@ -9,5 +9,12 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-
-
+file = File.open("data/3.txt")
+file_data = file.readlines.map(&:chomp)
+file.close
+ans = 0
+file_data.each do |line|
+  temp = line.split("\t").map(&:to_i)
+  ans += temp.max - temp.min
+end
+puts ans

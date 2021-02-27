@@ -15,5 +15,12 @@
 #
 #
 ## Решение:
-
-
+file = File.open("data/4.txt")
+file_data = file.readlines.map(&:chomp)
+file.close
+ans = 0
+file_data.each do |line|
+  t = line.split("x").map(&:to_i).sort
+  ans += 2 * (t[0] * t[1] + t[1] * t[2] + t[2] * t[0]) + t[0] * t[1]
+end
+puts ans

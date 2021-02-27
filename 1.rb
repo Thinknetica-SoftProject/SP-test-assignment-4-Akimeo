@@ -15,7 +15,7 @@
 #
 #
 ## Решение:
-
-
-
-
+file = File.open("data/1.txt")
+file_data = file.read
+file.close
+puts file_data.count("(") - file_data.count(")")
